@@ -32,7 +32,8 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateToImcApp() {
-
+        val intent = Intent(this, ImcCalculatorActivity::class.java)
+        startActivity(intent)
     }
 
 }
