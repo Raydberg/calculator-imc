@@ -3,4 +3,7 @@
     <string name="text_male">hombre</string>
     <string name="text_female">mujer</string>
     <string name="text_height">Altura</string>
+    <string name="text_weight">Peso</string>
+    <string name="text_age">Edad</string>
+    <string name="text_calculate">Calcular</string>
 </resources>
