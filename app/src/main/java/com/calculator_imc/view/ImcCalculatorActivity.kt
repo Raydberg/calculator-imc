@@ -1,5 +1,6 @@
 package com.calculator_imc.view
 
+import android.content.Intent
 import android.icu.text.DecimalFormat
 import android.os.Bundle
 import android.widget.Button
@@ -20,7 +21,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private var isFemaleSelected: Boolean = false;
     private var currentWeight: Int = 60;
     private var currentAge: Int = 10;
-    private var currentHeight: Int = 70;
+    private var currentHeight: Int = 120;
     private var currentResult: Double = 0.0;
 
     // lateinit -> Se inicia cuando yo le diga , ya que esta afuera
@@ -36,6 +37,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var tvAge: TextView;
     private lateinit var btnCalculate: Button
     private lateinit var tvResult: TextView
+
+    companion object {
+        const val IMC_KEY = "IMC_RESULT"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,8 +88,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
         rsHeight.addOnChangeListener { _, value, _ ->
 
             val df = DecimalFormat("#.##")
-            currentWeight = df.format(value).toInt()
-            tvHeight.text = "$currentWeight cm";
+            currentHeight = df.format(value).toInt()
+            tvHeight.text = "$currentHeight cm";
         }
         btnSubtractWeight.setOnClickListener {
             currentWeight -= 1
@@ -106,18 +111,25 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setAge();
         }
         btnCalculate.setOnClickListener {
-            calculateIMC()
+            val result = calculateIMC()
+            navigateToResult(result)
         }
 
     }
 
-    private fun calculateIMC() {
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent);
+    }
+
+    private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
         currentResult =
             df.format(currentWeight / (currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100))
                 .toDouble()
-
-        setResult()
+        return currentResult;
+//        setResult()
     }
 
     private fun setResult() {

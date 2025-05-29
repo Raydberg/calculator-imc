@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculatorimc"
-        tools:targetApi="31"
-        >
+        tools:targetApi="31">
+        <activity
+            android:name=".view.ResultIMCActivity"
+            android:exported="false" />
         <activity
             android:name=".view.ImcCalculatorActivity"
             android:exported="false" />
@@ -30,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -166,23 +166,25 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnSubtractWeight"
+                    android:id="@+id/btnPlusWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:contentDescription="Plus"
+                    android:contentDescription="Subtraction"
                     android:src="@drawable/ic_plus"
                     app:backgroundTint="@color/background_fab"
                     app:tint="@color/white" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnPlusWeight"
+                    android:id="@+id/btnSubtractWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="Subtraction"
                     android:src="@drawable/subway__subtraction_1"
+                    android:contentDescription="Plus"
                     app:backgroundTint="@color/background_fab"
                     app:tint="@color/white" />
+
+
 
             </LinearLayout>
 

@@ -6,4 +6,24 @@
     <string name="text_weight">Peso</string>
     <string name="text_age">Edad</string>
     <string name="text_calculate">Calcular</string>
+    <string name="result">Resultado</string>
+    <string name="re_result">Re Calcultar</string>
+
+
+    <string name="error">Error</string>
+    <string name="title_bajo_peso">Bajo peso</string>
+    <string name="description_bajo_peso">Estas por debajo del peso optimo</string>
+
+
+    <string name="title_peso_normal">Peso Normal</string>
+    <string name="description_peso_normal">Tienes un peso optimo</string>
+
+    <string name="title_sobrepeso">Sobrepeso</string>
+    <string name="description_sobrepeso">Tienes Sobrepeso</string>
+
+
+    <string name="title_obesidad">Obesidad</string>
+    <string name="description_obesidad">Tienes Obesidad</string>
+
+
 </resources>
