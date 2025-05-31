@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.calculator_imc.R
@@ -44,28 +45,33 @@ class ResultIMCActivity : AppCompatActivity() {
         when (result) {
             //Bajo Peso
             in 0.00..18.00 -> {
-                tvResult.text = getString(R .string.title_bajo_peso)
+                tvResult.text = getString(R.string.title_bajo_peso)
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_bajo))
                 tvDescription.text = getString(R.string.description_bajo_peso)
             }
             //Peso normal
             in 18.51..24.99 -> {
                 tvResult.text = getString(R.string.title_peso_normal)
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_normal))
                 tvDescription.text = getString(R.string.description_peso_normal)
             }
 
             //Sobrepeso
             in 25.00..29.99 -> {
                 tvResult.text = getString(R.string.title_sobrepeso)
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_sobrepeso))
                 tvDescription.text = getString(R.string.description_sobrepeso)
             }
 
             in 30.00..99.00 -> {
                 tvResult.text = getString(R.string.title_obesidad)
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.obesidad))
                 tvDescription.text = getString(R.string.description_obesidad)
             }
             //Error
             else -> {
                 tvResult.text = getString(R.string.error)
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.obesidad))
                 tvResult.text = getString(R.string.error)
                 tvDescription.text = getString(R.string.error)
 
